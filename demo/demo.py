@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from os.path import join, dirname, abspath
+from sys import path
+path.append(dirname(dirname(abspath(__file__))))    # adds parent directory to path to run this script from commandline
 
 import svg_layout
 from svg_layout import Panel, PanelLabel, Figure
@@ -14,7 +17,8 @@ def mpl_plot(ax: plt.Axes):
 
 if __name__ == '__main__':
     """ A demo. """
-    svg_layout.working_dir = 'figs'  # please specify the working directory first, which all file paths are relative to
+    svg_layout.working_dir = join(abspath(dirname(__file__)), 'figs')
+    # please specify the working directory first, which all input and output SVG file paths are relative to
     svg_layout.unit = 'cm'  # optional to specify the unit of length for width, height, x, and y inputs, default to cm
     # only five units of length are implemented: 'px' - pixel, 'in' - inch, 'cm' - centimeter, 'pc' - pica, 'pt' - point
 
