@@ -17,7 +17,7 @@ def mpl_plot(ax: plt.Axes):
 
 if __name__ == '__main__':
     """ A demo. """
-    svg_layout.working_dir = join(abspath(dirname(__file__)), 'figs')
+    svg_layout.working_dir = join(dirname(abspath(__file__)), 'figs')   # all inputs and outputs SVGs are in demo/figs
     # please specify the working directory first, which all input and output SVG file paths are relative to
     svg_layout.unit = 'cm'  # optional to specify the unit of length for width, height, x, and y inputs, default to cm
     # only five units of length are implemented: 'px' - pixel, 'in' - inch, 'cm' - centimeter, 'pc' - pica, 'pt' - point
